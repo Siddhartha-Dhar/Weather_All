@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Weather</title>
+  <link rel="icon" type="image" href="Resources/favicon.png">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://kit.fontawesome.com/5c13f22622.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="row">
+
+    <div id="bdy" class="col-9" style="background-color: #f1f2ff">
+      <!-------------------------------------------------------------------------------------------------------- Left Portion-->
+      <!---------------------------------------------------------- Time Date & Toggle-->
+      <div class="row">
+        <div class="col-9">
+          <h1 class="rightTop" id="Time"><b></b></h1><br>
+        </div>
+        <div class="col-3" style="text-align: center; margin-top: 3%; margin-bottom: 0%;">
+          <!--Day Night Toggler-->
+          <input type="checkbox" id="toggle_checkbox"  onclick="bgchange()">
+          <label for="toggle_checkbox">
+            <div id="star">
+              <div class="star" id="star-1">★</div>
+              <div class="star" id="star-2">★</div>
+            </div>
+            <div id="moon"></div>
+          </label>
+        </div>
+      </div>
+      <!----------------------------------------------------------- Date Widget-->
+      <div class="row">
+        <h3 class="rightDate" id="date"></h3>
+      </div>
+      <!----------------------------------------------------------- Name Display-->
+      <div class="row">
+        <h2 class="rightGreet"><b><i class="far fa-sun"></i>&nbsp;Good morning, Siddhartha!</b></h2>
+      </div>
+
+      <!----------------------------------------------------------- Day Cards-->
+      <div class="row" style="margin-top: 3%;">
+        <!--------------------------- Sunday-->
+        <div class="card" style="margin-left: 8%; border-radius: 35px;">
+          <img class="wIcon" src="Resources/rainSun.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Sun</b></h4>
+            <h5><b>28&deg;</b></h5>
+          </div>
+        </div>
+        <!--------------------------- Monday-->
+        <div class="card" style="border-radius: 35px;">
+          <img class="wIcon" src="Resources/thunder.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Mon</b></h4>
+            <h5><b>17&deg;</b></h5>
+          </div>
+        </div>
+        <!--------------------------- Tuesday-->
+        <div class="card" style="border-radius: 35px;">
+          <img class="wIcon" src="Resources/mist.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Tue</b></h4>
+            <h5><b>20&deg;</b></h5>
+          </div>
+        </div>
+        <!--------------------------- Wednesday-->
+        <div class="card" style="border-radius: 35px;">
+          <img class="wIcon" src="Resources/moon.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Wed</b></h4>
+            <h5><b>29&deg;</b></h5>
+          </div>
+        </div>
+        <!--------------------------- Thursday-->
+        <div class="card" style="border-radius: 35px;">
+          <img class="wIcon" src="Resources/foggy.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Thu</b></h4>
+            <h5><b>22&deg;</b></h5>
+          </div>
+        </div>
+        <!--------------------------- Friday-->
+        <div class="card" style="border-radius: 35px;">
+          <img class="wIcon" src="Resources/thunder.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Fri</b></h4>
+            <h5><b>16&deg;</b></h5>
+          </div>
+        </div>
+        <!--------------------------- Saturday-->
+        <div class="card" style="border-radius: 35px;">
+          <img class="wIcon" src="Resources/sun.png" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>Sat</b></h4>
+            <h5><b>20&deg;</b></h5>
+          </div>
+        </div>
+      </div>
+
+      <!--------------------------------------------------------------------- Details Card-->
+      <div class="row">
+
+        <div class="col-6">
+          <!------------------------------------------------------------ First Card-->
+          <div class="row" style="margin-left: 8%; margin-top: 3%;">
+            <div class="row, wCard">
+              <div class="row">
+                <div class="col-9">
+                  <h2 style="color: #4a4162; margin-left: 8%; margin-top: 8%; margin-bottom: 5%;"><b>Air Quality
+                      Index</b></h2>
+                </div>
+                <div class="col-3">
+                  <h2 style="color: #ccc8da; font-size: 1.5em; margin-right: 15%; margin-top: 20%;"><b><i
+                        class="fas fa-map-marker-alt"></i>&nbsp;Howrah</b></h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-9">
+                  <h3 class="airQ"><i class="fas fa-wind"></i>&nbsp;Good</h3>
+                  <h5 style="color: #d3cede; margin-left: 10%; margin-bottom: 8%;"><b>A perfect day for a Walk!</b></h5>
+                </div>
+                <div class="col-3">
+                  <button class="rfBtn">Refresh</button>
+                </div>
+              </div>
+              <div class="row">
+                <!-- PM2-->
+                <div class="styleVal" style="margin-left: auto;">
+                  <div class="inCard"><br>
+                    <h5><b>9.3</b></h5>
+                    <h6><b>PM2</b></h6><br>
+                  </div>
+                </div>
+                <!-- PM10-->
+                <div class="styleVal">
+                  <div class="inCard"><br>
+                    <h5><b>12.2</b></h5>
+                    <h6><b>PM10</b></h6><br>
+                  </div>
+                </div>
+                <!-- SO2-->
+                <div class="styleVal">
+                  <div class="inCard"><br>
+                    <h5><b>4.8</b></h5>
+                    <h6><b>SO2</b></h6><br>
+                  </div>
+                </div>
+                <!-- NO2-->
+                <div class="styleVal">
+                  <div class="inCard"><br>
+                    <h5><b>4.6</b></h5>
+                    <h6><b>NO2</b></h6><br>
+                  </div>
+                </div>
+                <!-- O2-->
+                <div class="styleVal">
+                  <div class="inCard"><br>
+                    <h5><b>6.5</b></h5>
+                    <h6><b>O2</b></h6><br>
+                  </div>
+                </div>
+                <!-- CO-->
+                <div class="styleVal" style="margin-right: auto;">
+                  <div class="inCard"><br>
+                    <h5><b>0.9</b></h5>
+                    <h6><b>CO</b></h6><br>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!----------------------------------------------------------- Second Card-->
+          <div class="row">
+            <div class="wCard" style="margin-left: 15%; margin-top: 5%">
+              <div style="margin-bottom: 5%;"><br>
+                <h1 style="color: #4a4162; margin-left: 5%; font-size: 2em;"><b>Rain Data</b></h1>
+              </div>
+              <div class="row">
+                <div class="col-2" style="margin-left: 12%;">
+                  <div class="progress progress-bar-vertical">
+                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                      aria-valuemax="100" style="height: 30%;"> </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="progress progress-bar-vertical">
+                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                      aria-valuemax="100" style="height: 50%;"> </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="progress progress-bar-vertical">
+                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                      aria-valuemax="100" style="height: 80%;"> </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="progress progress-bar-vertical">
+                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                      aria-valuemax="100" style="height: 40%;"> </div>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <div class="progress progress-bar-vertical">
+                    <div class="progress-bar progress-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                      aria-valuemax="100" style="height: 50%;"> </div>
+                  </div>
+                </div>
+                <div class="col-2"></div>
+              </div><br>
+            </div>
+          </div>
+
+        </div>
+        <!------------------------------------------------------------------- Third Card-->
+        <div class="col-6">
+          <div class="tCard">
+            <div class="row">
+              <h3 style="color: #5d5570; margin-left: 8%; margin-top: 3%; margin-bottom: 8%;">
+                <b>Sunrise&nbsp;&#38;&nbsp;Sunset</b></h3>
+            </div>
+
+            <div class="row, midCard">
+              <div class="row">
+                <h3 style="font-size: 1.5em; color: #615973; margin-left: 5%; margin-top: 4%; margin-bottom: 6%;"><b><i
+                      class="fas fa-map-marker-alt"></i>&nbsp;Kolkata</b></h3>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <h3 style="color: #615973; margin-left: 15%;"><b><i class="far fa-sun"
+                        style="color: #f6cc88; font-size: 2em;"></i>&nbsp;Sunrise</b></h3>
+                  <h1 style="color: #8884d9; margin-left: 20%;"><b>4:40&nbsp;AM</b></h1>
+                </div>
+                <div class="col-6">
+                  <h3 style="color: #615973; margin-left: 15%;"><b><i class="far fa-moon"
+                        style="color: #f6cc88; font-size: 2em;"></i>&nbsp;Sunset</b></h3>
+                  <h1 style="color: #8884d9; margin-left: 20%;"><b>6:53&nbsp;PM</b></h1><br>
+                </div>
+              </div>
+            </div>
+
+            <div class="row, midCard">
+              <div class="row">
+                <h3 style="font-size: 1.5em; color: #615973; margin-left: 5%; margin-top: 4%; margin-bottom: 6%;"><b><i
+                      class="fas fa-map-marker-alt"></i>&nbsp;Tokyo</b></h3>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <h3 style="color: #615973; margin-left: 15%;"><b><i class="far fa-sun"
+                        style="color: #f6cc88; font-size: 2em;"></i>&nbsp;Sunrise</b></h3>
+                  <h1 style="color: #8884d9; margin-left: 20%;"><b>4:47&nbsp;AM</b></h1>
+                </div>
+                <div class="col-6">
+                  <h3 style="color: #615973; margin-left: 15%;"><b><i class="far fa-moon"
+                        style="color: #f6cc88; font-size: 2em;"></i>&nbsp;Sunset</b></h3>
+                  <h1 style="color: #8884d9; margin-left: 20%;"><b>6:49&nbsp;PM</b></h1><br>
+                </div>
+              </div>
+            </div><br>
+          </div>
+        </div>
+      </div>
+
+      <!----------------------------------------------------------- Navbar-->
+      <div class="icon-bar" style="margin-top: auto; margin-bottom: auto;">
+
+        <a href="#" class="iconroundup"><i class="far fa-window-restore"></i></a>
+        <a href="#" class="icontake"><i class="fas fa-map-marker-alt"></i></a>
+        <a href="#" class="icontake"><i class="fas fa-chart-bar"></i></a>
+        <a href="#" class="icontake"><i class="fas fa-thermometer-three-quarters"></i></a>
+        <a href="#" class="icontake"><i class="far fa-calendar-check" style="user-select: auto;"></i></a>
+        <a href="#" class="iconroundbtm"><i class="fas fa-cog" style="user-select: auto;"></i></a>
+
+      </div>
+
+      <div><br><br></div>
+
+    </div>
+
+    <!--------------------------------------------------------------------------------------------------------- Right Portion-->
+    <div class="col-3">
+
+      <div class="row">
+        <!------------------------------------------------------------------------- Holding the Search Bar-->
+        <div class="col-8">
+          <container class="searchBox">
+            <a href="#"><i id="search_btn" onclick="search()" class="fa fa-search" aria-hidden="true"></i></a>
+            <input id="search_bar" type="text" placeholder="search">
+            <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+          </container>
+        </div>
+        <div class="col-4">
+          <!--------------------------------------------------------------------- Notification and Profile setting-->
+          <container class="profileBox">
+            <a style="margin-top: 20px;" href="#"><i class="fa fa-bell-o" aria-hidden="true"></i></a>
+            <img src="Resources/Tony.jpg">
+          </container>
+        </div>
+      </div>
+      <!---------------------------------------------------------------------------- Card 1 on RIght Hand side-->
+      <div class="row">
+        <div class="rainCard">
+          <!-- City Name-->
+          <div style="padding-left: 20px;"><br>
+            <h3><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<b><span id="cName">Kolkata</span></b></h3>
+          </div>
+
+          <!-- Icon and Date-->
+          <div style="text-align: center;">
+            <img src="Resources/favicon.png" height="150vh;" width="auto">
+            <h6 id="date2" style="font-weight: bold; font-size: 1.5em;"><b></b></h6>
+          </div>
+
+          <!-- Temperature-->
+          <div style="text-align: center;">
+            <h1 style="font-weight: bold; font-size: 2em;"><span><b id="Temp"></b></span>&deg;</h1>
+          </div>
+
+          <!-- Other Info with day-->
+          <div style="text-align: center;">
+            <h4><b id="weekDay"></b></h4><br>
+            <h5><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-wind" aria-hidden="true"></i>&nbsp;Wind &nbsp; |
+                &nbsp;<span id="wind"></span>&nbsp;km/h</b></h5>
+            <h5><b><i class="fas fa-tint"></i>&nbsp;Hum &nbsp; | &nbsp;<span id="humid"></span>&nbsp;&percnt;</b></h5><br>
+          </div>
+        </div>
+      </div>
+
+      <!---------------------------------------------------------------------------- Card 2 on RIght Hand side-->
+      <div class="row, secCard">
+        <br>
+        <div class="row">
+          <div class="col-8" style="text-align: center;">
+            <h5><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-wind" aria-hidden="true"></i>&nbsp;Wind &nbsp; | &nbsp;
+                17&nbsp;km/h</b></h5>
+          </div>
+          <div class="col-4" style="text-align: center;">
+            <h5><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<b>Delhi</b></h5><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8" style="text-align: center;">
+            <h5><b><i class="fas fa-tint"></i>&nbsp;Hum &nbsp; | &nbsp; 21&nbsp;&percnt;</b></h5>
+          </div>
+          <div class="col-4" style="text-align: center;">
+            <h4><b>22&nbsp;&deg;</b></h4>
+          </div>
+        </div>
+        <br>
+      </div>
+
+      <!------------------------------------------------------------------------------ Card 3 on RIght Hand side-->
+      <div class="row, secCard" style="background-image: linear-gradient(to right, #fecb71, #ffbc50);">
+        <br>
+        <div class="row">
+          <div class="col-8" style="text-align: center;">
+            <h5><b>&nbsp;&nbsp;&nbsp;<i class="fa fa-wind" aria-hidden="true"></i>&nbsp;Wind &nbsp; | &nbsp;
+                22&nbsp;km/h</b></h5>
+          </div>
+          <div class="col-4" style="text-align: center;">
+            <h5><i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;<b>NY</b></h5><br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-8" style="text-align: center;">
+            <h5><b><i class="fas fa-tint"></i>&nbsp;Hum &nbsp; | &nbsp; 10&nbsp;&percnt;</b></h5>
+          </div>
+          <div class="col-4" style="text-align: center;">
+            <h4><b>-5&nbsp;&deg;</b></h4>
+          </div>
+        </div>
+        <br>
+      </div>
+
+
+    </div>
+  </div>
+</body>
+
+
+<script src="index.js"></script>
+</html>
